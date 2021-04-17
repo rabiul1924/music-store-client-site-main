@@ -1,28 +1,16 @@
-import React from 'react';
-import Guitar1 from '../../../images/guitar1.jpeg';
-import Guitar2  from '../../../images/guitar2.jpg';
-import Guitar3 from '../../../images/guitar3.jpg';
+import React, { useEffect, useState } from 'react';
+
 import ServiceDetail from '../ServiceDetail/ServiceDetail';
 
-const serviceData = [
-    {
-        name: 'Fender Stratocaster',
-        img: Guitar1 ,
-        price: 100000
-    },
-    {
-        name: 'Martin D-45',
-        img: Guitar2,
-        price: 12000
-    },
-    {
-        name: 'Fender Telecaster',
-        img: Guitar3,
-        price: 20000
-    }
-]
 
 const Services = () => {
+    const [books, setBooks] = useState([]);
+
+    useEffect (()=> {
+        fetch('http://localhost:5000/book')
+        .then(res => res.json())
+        .then(data => setBooks(data))
+    }, [])
     return (
         <section className="services-container mt-5">
             <div className="text-center">
@@ -32,7 +20,7 @@ const Services = () => {
             <div className="d-flex justify-content-center">
             <div className="w-75 row mt-5 pt-5">
                 {
-                    serviceData.map(service => <ServiceDetail service={service} key={service.name}></ServiceDetail>)
+                    books.map(service => <ServiceDetail service={service} key={service.name}></ServiceDetail>)
                 }
             </div>
         </div>
