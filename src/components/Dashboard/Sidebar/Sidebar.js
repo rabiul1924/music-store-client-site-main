@@ -24,7 +24,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/book" className="text-white">
+                    <Link to="/book:/_id" className="text-white">
                         <FontAwesomeIcon icon={faBook} /> <span>Book</span>
                     </Link>
                 </li>
