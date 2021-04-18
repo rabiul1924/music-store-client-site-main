@@ -18,7 +18,7 @@ const Comment = () => {
         };
         // console.log(eventData)
 
-        const url =`http://localhost:5000/comment`
+        const url =`https://intense-hamlet-83372.herokuapp.com/comment`
 
         fetch(url, {
             method: "POST",

@@ -20,7 +20,7 @@ const AddService = () => {
         };
         // console.log(eventData)
 
-        const url =`http://localhost:5000/addService`
+        const url =`https://intense-hamlet-83372.herokuapp.com/addService`
 
         fetch(url, {
             method: "POST",

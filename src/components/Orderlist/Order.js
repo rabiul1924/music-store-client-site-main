@@ -7,7 +7,7 @@ const Order = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/order")
+        fetch("https://intense-hamlet-83372.herokuapp.com/order")
             .then((res) => res.json())
             .then((data) => filterOrders(data));
     }, []);

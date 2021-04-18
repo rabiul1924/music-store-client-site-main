@@ -9,7 +9,7 @@ const Book = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [detail, setDetail] = useState([])
     useEffect(() => {
-        const url = `http://localhost:5000/book/${_id}`
+        const url = `https://intense-hamlet-83372.herokuapp.com/book/${_id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setDetail(data))
@@ -19,7 +19,7 @@ const Book = () => {
 
     const handleCheckout = () => {
         const orderInfo = { name, price, description, ...loggedInUser, orderTime: new Date() }
-        const url = `http://localhost:5000/addOrders`
+        const url = `https://intense-hamlet-83372.herokuapp.com/addOrders`
     
         fetch(url, {
           method: 'POST',
