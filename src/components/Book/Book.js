@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Table } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { UserContext } from '../../App.js';
 import Sidebar from '../Dashboard/Sidebar/Sidebar.js';
@@ -16,6 +16,20 @@ const Book = () => {
     }, [_id]);
     console.log(detail);
     const { id, name, description, price} = detail;
+
+    const handleCheckout = () => {
+        const orderInfo = { name, price, description, ...loggedInUser, orderTime: new Date() }
+        const url = `http://localhost:5000/addOrders`
+    
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(orderInfo)
+        })
+          .then(res => console.log('server side response', res))
+      }
     return (
         <section>
             <div className="row">
@@ -48,6 +62,7 @@ const Book = () => {
                      </tr>
                     </tbody>
               </Table>
+              <Button variant="primary" onClick={handleCheckout}> Checkout</Button>
                 </div>
               
             </div>
