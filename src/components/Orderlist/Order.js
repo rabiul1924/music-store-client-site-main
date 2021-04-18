@@ -39,7 +39,9 @@ const Order = () => {
                             <tr>
                                 <th className="bg-primary">Product Name</th>
                                 <th className="bg-warning">Quantity</th>
+                                <th className="bg-warning">Pay with</th>
                                 <th className="bg-danger">Price</th>
+                                <th className="bg-warning">Status</th>
                             </tr>
                         </thead>
                     </Table>
@@ -52,7 +54,11 @@ const Order = () => {
                                             <tr>
                                                 <td className="bg-primary">{singleOrder.name}</td>
                                                 <td className="bg-warning">1</td>
+                                                <td className="bg-warning">Credit Card</td>
                                                 <td>${singleOrder.price}</td>
+                                                <td className="bg-warning"><span style={{margin:'2px', padding:'2px'}}>pending</span>
+                                                <span>ongoing</span> <span>Done</span>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </Table>

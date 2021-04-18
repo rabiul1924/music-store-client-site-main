@@ -14,7 +14,7 @@ const ServiceDetail = (props) => {
     }
     return (
         <div className="col-md-4 text-center body ">
-            <img  style={{height: '150px', margin:'15px', padding:'10px'}} src={imageURL} alt="" />
+            <img className="boxy"  style={{height: '150px', margin:'15px', padding:'10px'}} src={imageURL} alt="" />
             <h5 className="mt-3 mb-3">{name}</h5>
             <h5 className="mt-3 mb-3">{price}Tk</h5>
             <p> {description}</p>

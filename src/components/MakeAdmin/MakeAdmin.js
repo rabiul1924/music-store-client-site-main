@@ -11,7 +11,10 @@ const MakeAdmin = () => {
                 <Sideposter></Sideposter>
             </div>
             <div className="col-md-7 col-sm-12 col-12 d-flex justify-content-center">
-              <h2 className="text-primary">Make Admin</h2>
+                <div className="row">
+                <input type="text" placeholder="New Admin Add"/>
+             <input type="submit" />
+             </div>
             </div>
           
         </div>
