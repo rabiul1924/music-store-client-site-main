@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../App.js';
 
 const Navbar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    fetch("https://intense-hamlet-83372.herokuapp.com/isAdmin", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email: loggedInUser.email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setIsAdmin(data);
+      });
+  }, []);
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
 
@@ -15,9 +31,9 @@ const Navbar = () => {
                     <li className="nav-item active">
                         <a className="nav-link mr-5 text-white" href="#">Home <span className="sr-only">(current)</span></a>
                     </li>
-                    <li className="nav-item">
+                    {isAdmin && <li className="nav-item">
                     <Link className="nav-link mr-5 text-white" to="/admin">Admin</Link>
-                    </li>
+                    </li>}
                     <li className="nav-item">
                     <Link className="nav-link mr-5 text-white" to="/dashboard">Dashboard</Link>
                     </li>

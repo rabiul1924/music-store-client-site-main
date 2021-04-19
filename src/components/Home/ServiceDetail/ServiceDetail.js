@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import './ServiceDetail.css'
 
 const ServiceDetail = (props) => {
-    console.log("check", props.service);
+    // console.log("check", props.service);
     const {_id, name, description, price, imageURL } = props.service;
     const history = useHistory()
     const handleBuyNow = id => {

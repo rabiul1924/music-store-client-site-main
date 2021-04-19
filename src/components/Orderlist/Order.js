@@ -1,7 +1,9 @@
+/* eslint-disable no-restricted-globals */
 import React, { useContext, useEffect, useState } from 'react';
 import { Col, Row, Table } from 'react-bootstrap';
 import { UserContext } from '../../App.js';
 import Sideposter from '../Admin/Sideposter/Sideposter.js';
+import Table420 from '../Table420/Table420.js';
 
 const Order = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -17,6 +19,24 @@ const Order = () => {
         );
         setOrders(filterData);
     };
+
+    const {_id}  = orders || {}
+    console.log(orders._id)
+
+    const deleteCase = (event, id) => {
+        // const url = `https://hidden-headland-12235.herokuapp.com/delete/${id}`;
+        // fetch(url, {
+        //   method: "DELETE",
+        // })
+        //   .then((res) => res.json())
+        //   .then((result) => {
+        //     console.log("delete");
+        //   });
+        // window.location.reload(false);
+        console.log(id)
+      };
+      console.log(_id)
+    
     return (
         <section>
             <div className="row">
@@ -48,20 +68,10 @@ const Order = () => {
                     {orders.map((singleOrder) => {
                         return (
                             <div>
+
                                 <div className="container">
-                                    <Table striped bordered hover variant="dark">
-                                        <tbody>
-                                            <tr>
-                                                <td className="bg-primary">{singleOrder.name}</td>
-                                                <td className="bg-warning">1</td>
-                                                <td className="bg-warning">Credit Card</td>
-                                                <td>${singleOrder.price}</td>
-                                                <td className="bg-warning"><span style={{margin:'2px', padding:'2px'}}>pending</span>
-                                                <span>ongoing</span> <span>Done</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </Table>
+                                    <Table420 singleOrder={singleOrder}></Table420> 
+                                   
                                 </div>
                             </div>
                         );
