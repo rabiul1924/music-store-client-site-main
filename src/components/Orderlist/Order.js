@@ -7,35 +7,13 @@ import Table420 from '../Table420/Table420.js';
 
 const Order = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const [orders, setOrders] = useState([]);
-    useEffect(() => {
-        fetch("https://intense-hamlet-83372.herokuapp.com/order")
-            .then((res) => res.json())
-            .then((data) => filterOrders(data));
-    }, []);
-    const filterOrders = (data) => {
-        const filterData = data.filter(
-            (order) => order.email == loggedInUser.email
-        );
-        setOrders(filterData);
-    };
-
-    const {_id}  = orders || {}
-    console.log(orders._id)
-
-    const deleteCase = (event, id) => {
-        // const url = `https://hidden-headland-12235.herokuapp.com/delete/${id}`;
-        // fetch(url, {
-        //   method: "DELETE",
-        // })
-        //   .then((res) => res.json())
-        //   .then((result) => {
-        //     console.log("delete");
-        //   });
-        // window.location.reload(false);
-        console.log(id)
-      };
-      console.log(_id)
+  
+    const [orderList , setOrderList] = useState([])
+    useEffect(()=>{
+        fetch('https://intense-hamlet-83372.herokuapp.com/order')
+        .then ((res)=> res.json())
+        .then((data) =>setOrderList(data))
+    }, [])
     
     return (
         <section>
@@ -48,7 +26,7 @@ const Order = () => {
                 <Col>
                     <Row>
                         <Col md={6}>
-                            <h3 className="text-center">Order Total:{orders.length}{" "}</h3>
+                            <h3 className="text-center">Order Total:{orderList.length}{" "}</h3>
                         </Col>
                         <Col md={6}>
                             <h2 className="text-center text-danger">This Order Made by: {loggedInUser.email}</h2>
@@ -65,7 +43,7 @@ const Order = () => {
                             </tr>
                         </thead>
                     </Table>
-                    {orders.map((singleOrder) => {
+                    {orderList.map((singleOrder) => {
                         return (
                             <div>
 
