@@ -27,6 +27,7 @@ const Order = () => {
                     <Row>
                         <Col md={6}>
                             <h3 className="text-center">Order Total:{orderList.length}{" "}</h3>
+                            
                         </Col>
                         <Col md={6}>
                             <h2 className="text-center text-danger">This Order Made by: {loggedInUser.email}</h2>
@@ -36,9 +37,9 @@ const Order = () => {
                         <thead>
                             <tr>
                                 <th className="bg-primary">Product Name</th>
-                                <th className="bg-warning">Quantity</th>
                                 <th className="bg-warning">Pay with</th>
                                 <th className="bg-danger">Price</th>
+                                <th className="bg-danger">Email</th>
                                 <th className="bg-warning">Status</th>
                             </tr>
                         </thead>

@@ -25,9 +25,9 @@ const Table420 = ({singleOrder}) => {
                                         <tbody>
                                             <tr>
                                                 <td className="bg-primary">{singleOrder.name}</td>
-                                                <td className="bg-warning">1</td>
                                                 <td className="bg-warning">Credit Card</td>
-                                                <td>${singleOrder.price}</td>
+                                                <td>{singleOrder.price}TK</td>
+                                                <td>{singleOrder.email}</td>
                                                 <td className="bg-warning"><span style={{margin:'2px', padding:'2px'}}>pending</span>
                                                 <span>ongoing</span> <span>Done</span>
                                                 <button onClick={() => deleteCase(event, _id)}>delete</button>
