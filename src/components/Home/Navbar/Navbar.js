@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Nav, Container} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App.js';
 
@@ -19,6 +20,7 @@ const Navbar = () => {
       });
   }, []);
     return (
+     
         <nav className="navbar navbar-expand-lg navbar-light">
 
           <h1 style={{color:'white'}}>MUSIC WORLD</h1>

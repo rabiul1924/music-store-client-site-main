@@ -13,7 +13,7 @@ const Order = () => {
         fetch('https://intense-hamlet-83372.herokuapp.com/order')
         .then ((res)=> res.json())
         .then((data) =>setOrderList(data))
-    }, [])
+    }, [orderList])
     
     return (
         <section>
