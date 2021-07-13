@@ -13,12 +13,18 @@ const ServiceDetail = (props) => {
       history.push(url)
     }
     return (
-        <div className="col-md-4 text-center body ">
-            <img className="boxy"  style={{height: '150px', margin:'15px', padding:'10px'}} src={imageURL} alt="" />
-            <h5 className="mt-3 mb-3">{name}</h5>
-            <h5 className="mt-3 mb-3">{price}Tk</h5>
-            <p> {description}</p>
-            {<Button className="btnStyle mb-5" variant="primary" onClick={()=>handleBuyNow(_id)}>Buy Now</Button>}
+        <div className="col-md-4  service-body">
+            <div className='content'>
+                <div className="card mb-4">
+                    <div className="box" onClick={()=>handleBuyNow(_id)}>
+                        <img className="service-img" src={imageURL} alt="" />
+                        <h3>{name}</h3>
+                        <p>{description}</p>
+                        <h3>{price}</h3>
+                        {<Button className="btnStyle mb-5" variant="primary" onClick={()=>handleBuyNow(_id)}>Buy Now</Button>}
+                    </div>
+                </div>
+            </div>    
         </div>
     );
 };
