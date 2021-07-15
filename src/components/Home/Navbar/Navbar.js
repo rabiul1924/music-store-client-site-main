@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Nav, Container} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App.js';
 
@@ -21,7 +20,7 @@ const Navbar = () => {
   }, []);
     return (
      
-        <nav className="navbar navbar-expand-lg navbar-light">
+        <nav className="navbar navbar-expand-lg navbar-dark">
 
           <h1 style={{color:'white'}}>MUSIC WORLD</h1>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +30,7 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item active">
-                        <a className="nav-link mr-5 text-white" href="#">Home <span className="sr-only">(current)</span></a>
+                        <a className="nav-link mr-5 text-white" href="/">Home <span className="sr-only">(current)</span></a>
                     </li>
                     {isAdmin && <li className="nav-item">
                     <Link className="nav-link mr-5 text-white" to="/admin">Admin</Link>
@@ -45,9 +44,11 @@ const Navbar = () => {
                     <li className="nav-item">
                         <a className="nav-link mr-5 text-white" href="#">Contact Us</a>
                     </li>
-                    <li className="nav-item">
+                   {loggedInUser.isSignedIn ?  <li className="nav-item" onClick={() => setLoggedInUser({})}>
+                    <Link className="nav-link mr-5 text-white">LogOut</Link>
+                    </li> :  <li className="nav-item">
                     <Link className="nav-link mr-5 text-white" to="/login">Login</Link>
-                    </li>
+                    </li>}
                 </ul>
             </div>
         </nav>

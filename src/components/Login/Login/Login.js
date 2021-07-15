@@ -8,6 +8,7 @@ import fbIcon from '../../../images/fb.png';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSignIn, handleSignOut, initializeLoginFramework, signInWithEmailAndPassword } from './LogInManager';
 import { UserContext } from '../../../App.js';
+import Navbar from '../../Home/Navbar/Navbar.js';
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -107,7 +108,6 @@ const Login = () => {
     }
     return (
         <Container bg="light">
-        
             <Container>
                 <div className="row mx-auto">
                     <form onSubmit={handleSubmit} className="login-form mx-auto my-5 w-50 py-4 px-5 rounded">
@@ -161,6 +161,7 @@ const Login = () => {
                     </button>
                 </div>
             </Container>
+            <button className="d-block mx-auto btn btn-warning m-3" onClick={() => history.push('/') }>Back to Home</button>
         </Container>
     );
 };

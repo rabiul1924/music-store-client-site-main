@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Button, Table } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { UserContext } from '../../App.js';
+import CheckoutPage from '../CheckOutPage/CheckoutPage.js';
 import Sidebar from '../Dashboard/Sidebar/Sidebar.js';
-import ProcessPayment from '../ProcessPayment/ProcessPayment.js';
 
 
 
@@ -37,10 +37,10 @@ const Book = () => {
     return (
         <section>
             <div className="row">
-                <div className="col-md-4 col-sm-6 col-12">
+                <div className="col-12 col-md-2 col-sm-6">
                     <Sidebar></Sidebar>
                 </div>
-                <div className="col-md-4 col-sm-12 col-12 d-flex justify-content-center">
+                <div className="col-md-10 col-sm-12 col-12 d-flex justify-content-center">
                  <Table striped bordered hover variant="dark">
                   <thead>
                           <tr>
@@ -65,13 +65,13 @@ const Book = () => {
                     <td>${price}</td>
                      </tr>
                     </tbody>
-                    <Button variant="primary" onClick={handleCheckout}> Checkout</Button>
               </Table> 
                 </div>
             </div>
-            <div className="col-md-6 col-sm-12 col-12 d-flex justify-content-center">
-            <h1>PaY HerR</h1>
-            <ProcessPayment></ProcessPayment>
+            <div className="d-flex justify-content-center align-items-center">
+            <CheckoutPage/>
+            <div>  <button className="d-block h-auto btn btn-primary" onClick={handleCheckout}>Checkout</button></div>
+                  
             </div>
             
         </section>

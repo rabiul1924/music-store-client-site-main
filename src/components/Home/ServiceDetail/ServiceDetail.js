@@ -12,7 +12,9 @@ const ServiceDetail = (props) => {
       const url = `book/${id}`
       history.push(url)
     }
+   
     return (
+        <React.Fragment>
         <div className="col-md-4  service-body">
             <div className='content'>
                 <div className="card mb-4">
@@ -20,12 +22,14 @@ const ServiceDetail = (props) => {
                         <img className="service-img" src={imageURL} alt="" />
                         <h3>{name}</h3>
                         <p>{description}</p>
-                        <h3>{price}</h3>
-                        {<Button className="btnStyle mb-5" variant="primary" onClick={()=>handleBuyNow(_id)}>Buy Now</Button>}
+                        <h3>${price}</h3>
+                        {<Button className="btnStyle mb-5" variant="primary">Buy Now</Button>}
                     </div>
                 </div>
             </div>    
         </div>
+        </React.Fragment>
+        
     );
 };
 

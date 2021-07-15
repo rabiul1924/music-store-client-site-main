@@ -13,11 +13,11 @@ const Admin = () => {
     return (
         <section>
         <div style={containerStyle} className="row">
-            <div className="col-md-7 col-sm-6 col-12">
+            <div className="col-md-2 col-sm-6 col-12">
                 <Sideposter></Sideposter>
             </div>
-            <div className="col-md-5 col-sm-12 col-12 d-flex justify-content-center">
-              <h1>Admin panel </h1>
+            <div className="col-md-10 col-sm-12 col-12">
+              <h1>Admin panel</h1>
             </div>
           
         </div>

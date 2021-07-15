@@ -52,10 +52,10 @@ const AddService = () => {
     return (
         <section>
         <div className="row">
-            <div className="col-md-4 col-sm-6 col-12">
+            <div className="col-md-2 col-sm-6 col-12">
                 <Sideposter></Sideposter>
             </div>
-            <div className="col-md-8 col-sm-12 col-12 d-flex justify-content-center">
+            <div className="col-md-10 col-sm-12 col-12">
             <h3 style={{ textAlign: "center" }}>Add Product</h3>
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group>
