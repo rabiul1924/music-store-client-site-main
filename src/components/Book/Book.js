@@ -37,10 +37,10 @@ const Book = () => {
     return (
         <section>
             <div className="row">
-                <div className="col-12 col-md-2 col-sm-6">
+                <div className="col-12 col-sm-6 col-md-2">
                     <Sidebar></Sidebar>
                 </div>
-                <div className="col-md-10 col-sm-12 col-12 d-flex justify-content-center">
+                <div className="col-12 col-sm-12 col-md-10">
                  <Table striped bordered hover variant="dark">
                   <thead>
                           <tr>
@@ -66,13 +66,14 @@ const Book = () => {
                      </tr>
                     </tbody>
               </Table> 
-                </div>
-            </div>
-            <div className="d-flex justify-content-center align-items-center">
+              <div className="d-flex justify-content-center align-items-center">
             <CheckoutPage/>
             <div>  <button className="d-block h-auto btn btn-primary" onClick={handleCheckout}>Checkout</button></div>
                   
             </div>
+                </div>
+            </div>
+            
             
         </section>
     );

@@ -152,9 +152,9 @@ const Login = () => {
                 <div className="login-others text-center">
                     <span className="login-or">Or</span>
                     <br />
-                    <button onClick={fbSignIn}>
+                    {/* <button onClick={fbSignIn}>
                         <img src={fbIcon} alt="fb-icon" /> Continue with Facebook
-                    </button>
+                    </button> */}
                     <br />
                     <button onClick={googleSignIn}>
                         <img src={googleIcon} alt="google-icon" /> Continue with Google

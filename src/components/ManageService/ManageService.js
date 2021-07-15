@@ -7,10 +7,10 @@ const ManageService = () => {
     return (
         <section>
         <div className="row">
-            <div className="col-12 col-md-2 col-sm-6">
+            <div className="col-12 col-sm-6 col-md-2">
                 <Sideposter></Sideposter>
             </div>
-            <div className="col-md-10 col-sm-12 col-12 d-flex justify-content-center">
+            <div className="col-12 col-sm-12 col-md-10">
               <h2 className="text-primary">Manage Service</h2>
             </div>
           
