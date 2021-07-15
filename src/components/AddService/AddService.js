@@ -51,10 +51,8 @@ const AddService = () => {
  
     return (
         <section>
-        <div className="row">
-            <div className="col-12 col-sm-6 col-md-2">
+        <div className="container-fluid row">
                 <Sideposter></Sideposter>
-            </div>
             <div className="col-12 col-sm-12 col-md-10">
             <h3 style={{ textAlign: "center" }}>Add Product</h3>
             <Form onSubmit={handleSubmit(onSubmit)}>

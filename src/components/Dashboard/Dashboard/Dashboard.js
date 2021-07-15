@@ -24,10 +24,10 @@ const Dashboard = () => {
     return (
         <section>
             <div style={containerStyle} className="row">
-                <div className="col-12 col-md-2 col-sm-6">
+                <div className="col-12 col-sm-6 col-md-6">
                     <Sidebar></Sidebar>
                 </div>
-                <div className="col-md-8 col-sm-12 col-12 d-flex justify-content-center">
+                <div className="col-12 col-sm-12 col-md-6">
                     <Calendar
                         onChange={handleDateChange}
                         value={new Date()}

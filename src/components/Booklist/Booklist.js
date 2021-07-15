@@ -19,10 +19,8 @@ const Booklist = () => {
   }, []);
     return ( 
         <section>
-        <div className="row">
-            <div className="col-12 col-sm-6 col-md-2">
+        <div className="container-fluid row">
                 <Sidebar></Sidebar>
-            </div>
             <div className="col-12 col-sm-12 col-md-10">
               <h2 className="text-primary">Booking list!!</h2>
               {cases.map(getOrder=> <Card className="text-info"> Name:{getOrder.name} <br/> Price:{getOrder.price}tk <br/> Description:{getOrder.description}</Card>
