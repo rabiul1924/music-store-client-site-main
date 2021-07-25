@@ -10,6 +10,7 @@ const Comment = () => {
 
     const onClick = test => 
     {
+        alert('Thank For your valuable review')
         const reviewData = {
             name: test.name,
             price: test.companyName,

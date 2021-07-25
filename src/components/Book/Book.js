@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Table } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../App.js';
 import CheckoutPage from '../CheckOutPage/CheckoutPage.js';
 import Sidebar from '../Dashboard/Sidebar/Sidebar.js';
@@ -10,6 +11,7 @@ import Sidebar from '../Dashboard/Sidebar/Sidebar.js';
 
 const Book = () => {
     const { _id } = useParams()
+    
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [detail, setDetail] = useState([])
     useEffect(() => {
@@ -22,6 +24,7 @@ const Book = () => {
     const { id, name, description, price} = detail;
 
     const handleCheckout = () => {
+      alert('Check Your Order in Book List')
         const orderInfo = { name, price, description, ...loggedInUser, orderTime: new Date() }
         const url = `https://intense-hamlet-83372.herokuapp.com/addOrders`
     
@@ -71,7 +74,7 @@ const Book = () => {
             </div>
                 </div>
             </div>
-            
+          
             
         </section>
     );

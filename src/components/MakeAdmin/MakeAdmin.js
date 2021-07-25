@@ -14,6 +14,7 @@ const MakeAdmin = () => {
   };
 
   const handleSubmit = (e) => {
+    alert('Successfully made new Admin')
     const addNewAdmin = {
       email: admin.email,
     };

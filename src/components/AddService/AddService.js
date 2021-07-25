@@ -12,6 +12,7 @@ const AddService = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => 
     {
+        alert('Successfully Add New Product')
         const eventData = {
             name: data.name,
             price: data.price,

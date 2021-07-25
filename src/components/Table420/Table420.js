@@ -11,6 +11,7 @@ const Table420 = ({singleOrder}) => {
     
     
     const deleteCase = (event, id) => {
+      alert('Successfully delete order')
         const url = `https://intense-hamlet-83372.herokuapp.com/delete/${id}`;
         fetch(url, {
           method: "DELETE",
