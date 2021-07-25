@@ -38,8 +38,8 @@ const Book = () => {
         <section>
             <div className="container-fluid row">   
               <Sidebar></Sidebar>         
-                    <div className="col-12 col-sm-12 col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
-                 <Table striped bordered hover variant="dark">
+                    <div className="col-12 col-sm-12 col-md-10 p-4 pr-5" style={{ backgroundColor: "#F4FDFB" }}>
+                 <Table responsive="sm" striped bordered hover variant="dark">
                   <thead>
                           <tr>
                              <th>#</th>

@@ -16,7 +16,7 @@ import Admin from './components/Admin/Admin/Admin.js';
 import Order from './components/Orderlist/Order.js';
 import AddService from './components/AddService/AddService.js';
 import MakeAdmin from './components/MakeAdmin/MakeAdmin.js';
-import ManageService from './components/ManageService/ManageService.js';
+
 
 export const UserContext = createContext({});
 
@@ -53,9 +53,7 @@ function App() {
           <PrivateRoute path="/makeAdmin">
             <MakeAdmin></MakeAdmin>
           </PrivateRoute>
-          <PrivateRoute path="/manageServices">
-            <ManageService></ManageService>
-          </PrivateRoute>
+         
         <Route path="/login">
             <Login></Login>
           </Route>

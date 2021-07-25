@@ -32,7 +32,7 @@ const MakeAdmin = () => {
         <section>
         <div className="container-fluid row">
                 <Sideposter></Sideposter>
-                <div className="col-12 col-sm-12 col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
+                <div className="col-12 col-sm-12 col-md-10 p-4 pr-5" style={{backgroundColor: "#F4FDFB" }}>
                 <div className="row">
                   
                 <form onSubmit={handleSubmit}>

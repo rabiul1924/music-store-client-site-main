@@ -156,8 +156,8 @@ const Login = () => {
                         <img src={fbIcon} alt="fb-icon" /> Continue with Facebook
                     </button> */}
                     <br />
-                    <button onClick={googleSignIn}>
-                        <img src={googleIcon} alt="google-icon" /> Continue with Google
+                    <button onClick={googleSignIn} className="">
+                        <img src={googleIcon} alt="google-icon" fluid />Continue with Google 
                     </button>
                 </div>
             </Container>

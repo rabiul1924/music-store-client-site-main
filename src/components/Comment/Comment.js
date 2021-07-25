@@ -35,7 +35,7 @@ const Comment = () => {
         <section>
             <div className="container-fluid row">
                     <Sidebar></Sidebar>
-                    <div className="col-12 col-sm-12 col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
+                    <div className="col-12 col-sm-12 col-md-10 p-4 pr-5" style={{backgroundColor: "#F4FDFB" }}>
                 <h3 style={{ textAlign: "center" }}>Reviews</h3>
             <Form onSubmit={handleSubmit(onClick)}>
                 <Form.Group>

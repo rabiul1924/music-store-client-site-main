@@ -31,11 +31,6 @@ const Sideposter = () => {
                     <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
                 </Link>
             </li>
-            <li>
-                <Link to="/manageServices" className="text-white">
-                    <FontAwesomeIcon icon={faMapPin} /> <span>Manage Services</span>
-                </Link>
-            </li>
            
         </ul>
         <div>

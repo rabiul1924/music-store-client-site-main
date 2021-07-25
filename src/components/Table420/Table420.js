@@ -25,14 +25,14 @@ const Table420 = ({singleOrder}) => {
       console.log(_id)
     return (
         <div>
-             <Table striped bordered hover variant="dark">
+             <Table responsive="sm" striped bordered hover variant="dark">
                                         <tbody>
                                             <tr>
                                                 <td className="bg-primary">{singleOrder.name}</td>
-                                                <td className="bg-warning">Credit Card</td>
-                                                <td>{singleOrder.price}TK</td>
-                                                <td>{singleOrder.email}</td>
-                                                <td className="bg-warning">
+                                                <td className="bg-secondary">Credit Card</td>
+                                                <td className="bg-info">{singleOrder.price}TK</td>
+                                                <td className="bg-warning">{singleOrder.email}</td>
+                                                <td className="bg-danger">
                                                 <button onClick={() => deleteCase(event, _id)}>delete</button>
                                                 </td>
                                             </tr>

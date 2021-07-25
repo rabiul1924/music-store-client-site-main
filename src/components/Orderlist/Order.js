@@ -19,7 +19,7 @@ const Order = () => {
         <section>
             <div className="container-fluid row">
                     <Sideposter></Sideposter>
-                    <div className="col-12 col-sm-12 col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
+                    <div className="col-12 col-sm-12 col-md-10 p-4 pr-5" style={{backgroundColor: "#F4FDFB" }}>
                 <Row>
                 <Col>
                     <Row>
@@ -28,17 +28,17 @@ const Order = () => {
                             
                         </Col>
                         <Col md={6}>
-                            <h2 className="text-center text-danger">This Order Made by: {loggedInUser.email}</h2>
+                            <h4 className="text-center text-danger">This Order Made by: {loggedInUser.email}</h4>
                         </Col>
                     </Row>
-                    <Table striped bordered hover variant="dark">
+                    <Table responsive="sm" striped bordered hover variant="dark">
                         <thead>
                             <tr>
                                 <th className="bg-primary">Product Name</th>
-                                <th className="bg-warning">Pay with</th>
-                                <th className="bg-danger">Price</th>
-                                <th className="bg-danger">Email</th>
-                                <th className="bg-warning">Status</th>
+                                <th className="bg-secondary">Pay with</th>
+                                <th className="bg-info">Price</th>
+                                <th className="bg-warning">Email</th>
+                                <th className="bg-danger">Status</th>
                             </tr>
                         </thead>
                     </Table>
