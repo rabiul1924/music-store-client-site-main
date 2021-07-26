@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import axios from 'axios';
+import React, { useContext, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../../App.js';
@@ -6,6 +7,7 @@ import Sidebar from '../Dashboard/Sidebar/Sidebar.js';
 
 const Comment = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [imageURL, setImageURL] = useState(null)
     const { register, handleSubmit } = useForm();
 
     const onClick = test => 
@@ -13,8 +15,9 @@ const Comment = () => {
         alert('Thank For your valuable review')
         const reviewData = {
             name: test.name,
-            price: test.companyName,
+            address: test.address,
             description:test.description,
+            imageURL: imageURL
             
         };
         // console.log(eventData)
@@ -30,6 +33,22 @@ const Comment = () => {
         })
         .then((res) => console.log("server side response", res));
       
+    };
+
+    const handleImageUpload = event => {
+        console.log(event.target.files[0]);
+        const imageData = new FormData();
+        imageData.set("key", "9394744de9f3b381753ece25a7534a0b");
+        imageData.append("image", event.target.files[0]);
+
+        axios
+            .post("https://api.imgbb.com/1/upload", imageData)
+            .then(function (response) {
+                setImageURL(response.data.data.display_url);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     };
     
     return (
@@ -48,19 +67,27 @@ const Comment = () => {
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Company Name</Form.Label>
+                    <Form.Label>Address</Form.Label>
                     <Form.Control
-                        name="companyName"
-                        placeholder="companyName"
+                        name="address"
+                        placeholder="address"
                         ref={register}
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Product description</Form.Label>
+                    <Form.Label>Your Valuable Comment</Form.Label>
                     <Form.Control
                         name="description"
                         placeholder="description"
                         ref={register}
+                    />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Product Image</Form.Label>
+                    <Form.Control
+                        name="exampleRequired"
+                        type="file"
+                        onChange={handleImageUpload}
                     />
                 </Form.Group>
                
